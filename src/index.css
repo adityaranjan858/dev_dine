@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+@theme {
+    --color-lightSky: #3a98ff;
+  }
