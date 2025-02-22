@@ -32,8 +32,8 @@ const SearchBar = () => {
   return (
       <>
           <form onSubmit={submitHandler} className="text-center my-5">
-              <input type="text" value={searchedVal} onChange={searchHandler} className="search-bar px-4 py-2 rounded-s-xl border border-gray-300 focus:outline-none focus:border-blue-500 " placeholder="Search for restaurants..." />
-              <button type="submit" className=" bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-e-xl border border-blue-500 ">Search</button>
+              <input type="text" value={searchedVal} onChange={searchHandler} className="search-bar px-4 py-2 rounded-s-xl border border-fire focus:outline-none hover:border-green-600 focus:border-green-600 " placeholder="Search for restaurants..." />
+              <button type="submit" className=" bg-fire hover:bg-green-600 text-white px-4 py-2 rounded-e-xl border border-fire hover:border-green-600">Search</button>
           </form>
           
       </>

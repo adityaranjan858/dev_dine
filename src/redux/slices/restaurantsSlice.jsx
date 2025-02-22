@@ -1,10 +1,10 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import { RES_LIST_API } from "../../components/utils/constants";
+// import { RES_LIST_API } from "../../components/utils/constants";
 
 export const fetchRestaurants = createAsyncThunk("restaurants/fetch", async (query = "") => {
     try {
-        const response = await axios.get(RES_LIST_API);
+        const response = await axios.get("/api/");
         const restaurantData = response.data?.data?.cards?.[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
         
         return query.length > 0 ? restaurantData.filter(res => res?.info?.name?.toLowerCase().includes(query.toLowerCase())) : restaurantData;
