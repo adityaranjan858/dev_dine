@@ -4,7 +4,8 @@ import axios from "axios";
 
 export const fetchRestaurants = createAsyncThunk("restaurants/fetch", async (query = "") => {
     try {
-        const response = await axios.get("/api/");
+        const API_BASE_URL = import.meta.env.VITE_API_URL || "/api"; 
+        const response = await axios.get(API_BASE_URL);
         const restaurantData = response.data?.data?.cards?.[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
         
         return query.length > 0 ? restaurantData.filter(res => res?.info?.name?.toLowerCase().includes(query.toLowerCase())) : restaurantData;
